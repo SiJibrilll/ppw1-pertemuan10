@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Angkatan</th>
+        </tr>
+        <tr>
+            <td id="nama"></td>
+            <td id="nim"></td>
+            <td id="angkatan"></td>
+        </tr>
+    </table>
+
+    <script src="funcs.js"></script>
+    <script>
+        function main() {
+            q = confirm("apakah anda praktikan PPW1?")
+            
+            if (!q) {
+                alert("Anda bukan praktikan PPW1, Anda tidak boleh masuk!")
+                return
+            }
+
+            nama = prompt("Masukan nama:")
+            nim = prompt("Masukan NIM: ")
+            angkatan = prompt("Masukan Angkatan: ")
+
+            set(get('nama'), nama)
+            set(get('nim'), nim)
+            set(get('angkatan'), angkatan)
+        }
+
+        main()
+    </script>
+</body>
+</html>

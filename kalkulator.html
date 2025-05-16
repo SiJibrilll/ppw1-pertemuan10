@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" onsubmit="submit(); return false;">
+        <input name="a" type="number">
+        <select name="op" id="">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input name="b" type="number">
+    </form>
+    <button onclick="submit()">=</button>
+    <p>hasil</p>
+    <p id="result"></p>
+    
+    <script src="funcs.js"></script>
+    <script>
+        function submit() {
+            form = get('form')
+            data = new FormData(form)
+
+            a = 0 + parseInt(data.get('a'))
+            b = 0 + parseInt(data.get('b'))
+
+            hasil = get('result')
+            switch (data.get('op')) {
+                case '+': 
+                    set(hasil, a + b)
+                    break
+                case '-' :
+                    set(hasil, a - b)
+                    break
+                case '/' :
+                    set(hasil, a / b)
+                    break
+                case '*' :
+                    set(hasil, a * b)
+                    break
+            }
+        }
+    </script>
+</body>
+</html>

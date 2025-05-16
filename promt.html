@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promt</title>
+</head>
+<body>
+    <h1 id="hasil"></h1>
+    <script src="funcs.js"></script>
+    <script>
+        bil1 = parseInt(prompt("Masukan bilangan pertama"))
+        bil2 = parseInt(prompt("Masukan bilangan kedua"))
+
+        h1 = get('hasil')
+        if (bil1 > bil2) {
+            set(h1, bil1 + " Lebih besar dari " + bil2)
+        } else {
+            set(h1, bil2 + " Lebih besar dari " + bil1)
+        }
+    </script>
+</body>
+</html>
